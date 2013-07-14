@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h2>Your countdown has been saved!</h2>
+
+<p>View it here: <a href="{{ url_for('details', id=countdown.key.id()) }}" >{{ url_for('details', id=countdown.key.id()) }}</a></p>
+
+{% endblock %}

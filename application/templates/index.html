@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lt-ie9"><![endif]-->
+<!--[if IE 9]><html class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html><!--<![endif]-->
+	<head>
+		<title>Countdown Creator 2.0</title>
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="initial-scale=1.0">
+		
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+		
+		<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+	</head>
+	<body>
+		<h1><a href="/">The Countdown Creator</a></h1>
+		
+		<a href="/">home</a>
+		<a href="create">create a countdown</a>
+		<hr>
+		{% block content %}{% endblock %}
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+	</body>
+</html>
