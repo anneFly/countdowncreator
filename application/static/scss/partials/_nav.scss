@@ -1,0 +1,27 @@
+.nav-primary {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+
+  ul {
+    display: inline-block;
+    text-align: right;
+    width: 55%;
+    margin: auto;
+    li {
+      display: inline-block;
+      margin: 0 20px 0 60px;
+      a {
+        color: $colorWhite;
+        font-size: 14px;
+        line-height: 60px;
+        letter-spacing: 1px;
+        
+        &:hover, &:active {
+            color: $colorLightGreen;
+        }
+      }
+    }
+  }
+}

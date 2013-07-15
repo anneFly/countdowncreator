@@ -1,0 +1,92 @@
+html { height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $colorLightGrey;
+  font-family: $fontBase;
+  height: 100%;
+}
+
+div {
+  display: block;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clear {
+  display: block;
+  clear: both;
+}
+
+.header {
+  height: 50px;
+  background: $colorMintGreen;
+  @include background(linear-gradient($colorMintGreen, $colorDarkGreen));
+  margin: 0 0 40px 0;
+  
+  h1 {
+    display: inline-block;
+    float: left;
+    color: $colorWhite;
+    font-size: 20px;
+    line-height: 60px;
+    width: 45%;
+    margin: auto;
+    font-family: $fontSerif;
+    text-shadow: 2px 2px 4px $colorBlack;
+    
+    a {
+      color: inherit;
+    }
+  }
+}
+
+.main {
+    position: relative;
+    display: block;
+    max-width: 900px;
+    width: 95%;
+    margin: auto;
+    min-height: 300px;
+    padding-top: 27px;
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  padding: 20px;
+  border-top: 1px solid $colorDarkGrey;
+  background: $colorMediumGrey;
+  @include background(linear-gradient($colorMediumGrey, $colorDarkGrey));
+  text-align: center;
+  
+  span {
+    display: inline-block;
+    width: 49%;
+    margin: auto;
+    font-size: 10px;
+    color: $colorDarkerGrey;
+    @include text-shadow(1px 1px $colorWhite);
+    text-align: left;
+    
+    &.right {
+      text-align: right;
+    }
+    
+    a {
+      color: inherit;
+    }
+      
+  }
+}

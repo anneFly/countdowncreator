@@ -1,0 +1,185 @@
+@import url(http://fonts.googleapis.com/css?family=Aclonica);
+@import url(http://fonts.googleapis.com/css?family=Electrolize);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+html {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: whitesmoke;
+  font-family: arial, sans-serif;
+  height: 100%; }
+
+div {
+  display: block; }
+
+ul, li {
+  list-style-type: none; }
+
+a {
+  text-decoration: none; }
+
+.clear {
+  display: block;
+  clear: both; }
+
+.header {
+  height: 50px;
+  background: #339966;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #339966), color-stop(100%, #006633));
+  background: -webkit-linear-gradient(#339966, #006633);
+  background: -moz-linear-gradient(#339966, #006633);
+  background: -o-linear-gradient(#339966, #006633);
+  background: linear-gradient(#339966, #006633);
+  margin: 0 0 40px 0; }
+  .header h1 {
+    display: inline-block;
+    float: left;
+    color: white;
+    font-size: 20px;
+    line-height: 60px;
+    width: 45%;
+    margin: auto;
+    font-family: "Aclonica", serif;
+    text-shadow: 2px 2px 4px black; }
+    .header h1 a {
+      color: inherit; }
+
+.main {
+  position: relative;
+  display: block;
+  max-width: 900px;
+  width: 95%;
+  margin: auto;
+  min-height: 300px;
+  padding-top: 27px; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  padding: 20px;
+  border-top: 1px solid #cccccc;
+  background: #eeeeee;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+  background: -webkit-linear-gradient(#eeeeee, #cccccc);
+  background: -moz-linear-gradient(#eeeeee, #cccccc);
+  background: -o-linear-gradient(#eeeeee, #cccccc);
+  background: linear-gradient(#eeeeee, #cccccc);
+  text-align: center; }
+  .footer span {
+    display: inline-block;
+    width: 49%;
+    margin: auto;
+    font-size: 10px;
+    color: #666666;
+    text-shadow: 1px 1px white;
+    text-align: left; }
+    .footer span.right {
+      text-align: right; }
+    .footer span a {
+      color: inherit; }
+
+.nav-primary {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  text-align: center; }
+  .nav-primary ul {
+    display: inline-block;
+    text-align: right;
+    width: 55%;
+    margin: auto; }
+    .nav-primary ul li {
+      display: inline-block;
+      margin: 0 20px 0 60px; }
+      .nav-primary ul li a {
+        color: white;
+        font-size: 14px;
+        line-height: 60px;
+        letter-spacing: 1px; }
+        .nav-primary ul li a:hover, .nav-primary ul li a:active {
+          color: #99cc99; }
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 72px;
+    margin: 0; }
+    .header h1 {
+      float: none;
+      width: 100%;
+      text-align: left;
+      line-height: 36px; }
+
+  .nav-primary ul {
+    width: 100%; }
+    .nav-primary ul li {
+      display: inline-block;
+      margin: 0 0 0 15%; }
+      .nav-primary ul li a {
+        line-height: 36px; }
+
+  .footer {
+    position: static; } }
+@media screen and (max-width: 480px) {
+  .main-content {
+    width: 96%;
+    margin-bottom: 20px; } }
+@media screen and (max-width: 319px) {
+  .header {
+    height: 72px;
+    margin: 0; }
+    .header h1 {
+      font-size: 16px; }
+
+  .nav-primary ul li {
+    margin: 0 0 0 10%; } }

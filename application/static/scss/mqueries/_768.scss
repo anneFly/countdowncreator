@@ -1,0 +1,29 @@
+@media screen and (max-width: "768px") {
+  .header {
+    height: 72px;
+    margin: 0;
+    h1 {
+      float: none;
+      width: 100%;
+      text-align: left;
+      line-height: 36px;
+    }
+  }
+  
+  .nav-primary {
+    ul {
+      width: 100%;
+      
+      li {
+        display: inline-block;
+        margin: 0 0 0 15%;
+        
+        a { line-height: 36px; }
+      }
+    }
+  }
+  
+  .footer {
+    position: static;
+  }
+}

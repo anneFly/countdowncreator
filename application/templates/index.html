@@ -15,12 +15,22 @@
 
 	</head>
 	<body>
-		<h1><a href="/">The Countdown Creator</a></h1>
-		
-		<a href="/">home</a>
-		<a href="create">create a countdown</a>
-		<hr>
-		{% block content %}{% endblock %}
+		<header class="header">
+			<nav class="nav-primary">
+				<h1><a href="{{ url_for('route_to_index') }}">The Countdown Creator</a></h1>
+				<ul>
+					<li><a href="{{ url_for('route_to_index') }}">Home</a></li>
+					<li><a href="{{ url_for('route_to_create') }}">Create</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="main">
+			{% block content %}{% endblock %}
+		</div>
+		<footer class="footer">
+			<span>&copy; 2013 - created by Anne Fleischer</span>
+			<span class="right"><a href="mailto:anneflydev@gmail.com">contact me</a></span>
+		</footer>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 	</body>
