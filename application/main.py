@@ -21,8 +21,8 @@ def create_countdown():
     data = flask.request.form
     cd = Countdown()
     cd.title = data.get('title', None)
-    date = data.get('date', '')
-    time = data.get('hour', '') + ':' + data.get('minute', '') + ':' + data.get('second', '')
+    date = utils.build_string(data, ['year', 'month', 'day'], '-')
+    time = utils.build_string(data, ['hour', 'minute'], ':') + ':00'
     try:
         cd.date = datetime.strptime(date + ' ' + time, "%Y-%m-%d %H:%M:%S")
     except ValueError:

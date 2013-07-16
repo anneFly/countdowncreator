@@ -8,15 +8,36 @@
 
 <form method="post" action="/create">
 	
-		<input type="text" name="title" value="{{ input.title }}">
+	<input type="text" name="title" value="{{ input.title }}">
+	
+	<fieldset id="yearWrapper">
+        <button class="inc" type="button">+</button>
+        <input type="text" name="year" value="{{ input.year }}" maxlength="4" pattern"\d*" />
+        <button class="dec" type="button">-</button>
+    </fieldset>
+    <fieldset id="monthWrapper">
+        <button class="inc" type="button">+</button>
+        <input type="text" name="month" value="{{ input.month }}" maxlength="2" pattern"\d*" />
+        <button class="dec" type="button">-</button>
+    </fieldset>
+    <fieldset id="dayWrapper">
+        <button class="inc" type="button">+</button>
+        <input type="text" name="day" value="{{ input.day }}" maxlength="2" pattern"\d*" />
+        <button class="dec" type="button">-</button>
+    </fieldset>
+    
+    <fieldset id="hourWrapper">
+        <button class="inc" type="button">+</button>
+        <input type="text" name="hour" value="{{ input.hour }}" maxlength="2" pattern"\d*" />
+        <button class="dec" type="button">-</button>
+    </fieldset>
+    <fieldset id="minuteWrapper">
+        <button class="inc" type="button">+</button>
+        <input type="text" name="minute" value="{{ input.minute }}" maxlength="2" pattern"\d*" />
+        <button class="dec" type="button">-</button>
+    </fieldset>
 
-
-		<input type="date" name="date" value="{{ input.date }}">
-
-			<input type="text" maxlength="2" pattern"\d*" name="hour" value="{{ input.hour }}">
-			<input type="text" maxlength="2" pattern"\d*" name="minute" value="{{ input.minute }}">
-			<input type="text" maxlength="2" pattern"\d*" name="second" value="{{ input.second }}">
-		<button type="submit">submit</button>
+	<button type="submit">submit</button>
 	
 </form>
 
