@@ -7,38 +7,38 @@
 {% endif %}
 
 <form method="post" action="/create">
-	
-	<input type="text" name="title" value="{{ input.title }}">
-	
+
+	<input type="text" name="title" value="{{ input.title }}" placeholder="Title">
+
 	<fieldset id="yearWrapper">
         <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
-        <input type="text" name="year" value="{{ input.year }}" maxlength="4" pattern"\d*" />
+        <input type="text" name="year" value="{{ input.year }}" maxlength="4" pattern"\d*" placeholder="YYYY" data-validate="year" />
         <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
     </fieldset>
     <fieldset id="monthWrapper">
         <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
-        <input type="text" name="month" value="{{ input.month }}" maxlength="2" pattern"\d*" />
+        <input type="text" name="month" value="{{ input.month }}" maxlength="2" pattern"\d*" placeholder="MM" data-validate="month" />
         <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
     </fieldset>
     <fieldset id="dayWrapper">
         <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
-        <input type="text" name="day" value="{{ input.day }}" maxlength="2" pattern"\d*" />
+        <input type="text" name="day" value="{{ input.day }}" maxlength="2" pattern"\d*" placeholder="DD" data-validate="day" />
         <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
     </fieldset>
-    
+
     <fieldset id="hourWrapper">
         <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
-        <input type="text" name="hour" value="{{ input.hour }}" maxlength="2" pattern"\d*" />
+        <input type="text" name="hour" value="{{ input.hour }}" maxlength="2" pattern"\d*" placeholder="HH" data-validate="hour" />
         <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
     </fieldset>
     <fieldset id="minuteWrapper">
         <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
-        <input type="text" name="minute" value="{{ input.minute }}" maxlength="2" pattern"\d*" />
+        <input type="text" name="minute" value="{{ input.minute }}" maxlength="2" pattern"\d*" placeholder="MM" data-validate="minute" />
         <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
     </fieldset>
 
 	<button type="submit">submit</button>
-	
+
 </form>
 
 {% endblock %}

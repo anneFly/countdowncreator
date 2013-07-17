@@ -4,13 +4,13 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html><!--<![endif]-->
 	<head>
 		<title>Countdown Creator 2.0</title>
-		
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="initial-scale=1.0">
-		
+
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-		
+
 		<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 	</head>
@@ -31,8 +31,10 @@
 			<span>&copy; 2013 - created by Anne Fleischer</span>
 			<span class="right"><a href="mailto:anneflydev@gmail.com">contact me</a></span>
 		</footer>
-		
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+		<script src="{{ url_for('static', filename='js/app/utils.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/app/ui.js')}}"></script>
 		<script src="{{ url_for('static', filename='js/app/app.js')}}"></script>
 	</body>
 </html>
