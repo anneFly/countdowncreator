@@ -129,6 +129,9 @@ a {
     .footer span a {
       color: inherit; }
 
+.invalid {
+  border: 1px solid red; }
+
 .nav-primary {
   width: 90%;
   max-width: 900px;

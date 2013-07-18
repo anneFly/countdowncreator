@@ -34,6 +34,24 @@ var Utils = (function ($, window, Utils, undef) {
         return yearValid && monthValid && dayValid;
     };
 
+    Utils.validateForm = function ($fields) {
+        var data = {},
+            formValid = true;
+        $.each($fields, function (i, el) {
+            var key = $(el).data('validate'),
+                val = $(el).val();
+            data[key] = val;
+        });
+        $.each(data, function (k, v) {
+            var valid = Utils.checkInput(k, parseInt(v, 10));
+            $fields.filter(['[data-validate="', k, '"]'].join('')).toggleClass('invalid', !valid);
+            formValid = formValid && valid;
+        });
+        if (!formValid) { return false; }
+
+        return Utils.checkDate(data.year, data.month, data.day);
+    };
+
     return Utils;
 
 }(jQuery, this, this.Utils || {}));

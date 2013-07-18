@@ -30,7 +30,7 @@ a {
   background: $colorMintGreen;
   @include background(linear-gradient($colorMintGreen, $colorDarkGreen));
   margin: 0 0 40px 0;
-  
+
   h1 {
     display: inline-block;
     float: left;
@@ -41,7 +41,7 @@ a {
     margin: auto;
     font-family: $fontSerif;
     text-shadow: 2px 2px 4px $colorBlack;
-    
+
     a {
       color: inherit;
     }
@@ -70,7 +70,7 @@ a {
   background: $colorMediumGrey;
   @include background(linear-gradient($colorMediumGrey, $colorDarkGrey));
   text-align: center;
-  
+
   span {
     display: inline-block;
     width: 49%;
@@ -79,14 +79,18 @@ a {
     color: $colorDarkerGrey;
     @include text-shadow(1px 1px $colorWhite);
     text-align: left;
-    
+
     &.right {
       text-align: right;
     }
-    
+
     a {
       color: inherit;
     }
-      
+
   }
+}
+
+.invalid {
+    border: 1px solid red;
 }
