@@ -52,6 +52,16 @@ var Utils = (function ($, window, Utils, undef) {
         return Utils.checkDate(data.year, data.month, data.day);
     };
 
+    Utils.getCountdownData = function ($fields) {
+        var data = {};
+        $.each($fields, function (i, el) {
+            var key = $(el).attr('name'),
+                val = $(el).val();
+            data[key] = val;
+        });
+        return data;
+    };
+
     return Utils;
 
 }(jQuery, this, this.Utils || {}));

@@ -1,6 +1,8 @@
-var Ui = (function ($, window, Utils, Ui, undef) {
+var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
 
     'use strict';
+
+    Countdown = window.Countdown || {};
 
     var Spinner = function (params) {
         this.init(params);
@@ -64,7 +66,11 @@ var Ui = (function ($, window, Utils, Ui, undef) {
             return Utils.validateForm(that.$validateFields);
         });
         this.$validateBtn.on('click', function () {
-            Utils.validateForm(that.$validateFields);
+            var valid = Utils.validateForm(that.$validateFields);
+            if (valid) {
+                var data = Utils.getCountdownData(that.$el.find('input'));
+                Ui.Cd = new Countdown.create(data);
+            }
         });
     };
 
@@ -78,6 +84,10 @@ var Ui = (function ($, window, Utils, Ui, undef) {
         new Spinner({ selector: '#minuteWrapper', type: 'minute', value: 0 })
     );
 
+    Ui.updateView = function (data) {
+        console.log(data);
+    };
+
     return Ui;
 
-}(jQuery, this, this.Utils, this.Ui || {}));
+}(jQuery, this, this.Utils, this.Countdown || {}, this.Ui || {}));

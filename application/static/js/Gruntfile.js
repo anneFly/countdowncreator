@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 
             app: {
                  files: [
-                    { src:  ['app/utils.js', 'app/ui.js'],
+                    { src:  ['app/utils.js', 'app/countdown.js', 'app/ui.js'],
                       dest: 'app.js',
                       nonull: true }
                 ]
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
                 "trailing": true,
                 "maxparams": 10,
                 "maxdepth": 3,
-                "maxstatements": 10,
+                "maxstatements": 20,
                 "browser": true,
                 "maxlen": 120,
                 "maxcomplexity": 13,
