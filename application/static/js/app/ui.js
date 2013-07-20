@@ -39,6 +39,8 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
         });
         this.$input.on('blur', function (e) {
             if (Utils.checkInput(that.type, $(this).val())) {
+                that.value = $(this).val();
+                that.renderValue();
                 return true;
             }
             that.value = $(this).val() > that.maxValue ? that.maxValue : that.minValue;
@@ -57,24 +59,75 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
         this.$input.val([pre.join(''), this.value].join(''));
     };
 
+    var CountdownView = function (params) {
+        this.$el = $(params.selector);
+        this.$fields = {
+            'title': this.$el.find('[data-insert="title"]')
+        };
+        var fieldNames = ['days', 'hours', 'minutes', 'seconds'],
+            i = 0;
+        for (i; i<fieldNames.length; i++) {
+            this.$fields[fieldNames[i]] = [
+                this.$el.find(['[data-insert="', fieldNames[i], '"] .cd-number'].join('')),
+                this.$el.find(['[data-insert="', fieldNames[i], '"] .cd-label'].join(''))
+            ];
+        }
+    };
+
+    var InputView = function (params) {
+        this.$el = $(params.selector);
+    };
+
     var UiForm = function (params) {
         var that = this;
         this.$el = $(params.selector);
         this.$validateFields = $(params.requiredFields);
-        this.$validateBtn = $(params.validateBtn);
+        this.$previewBtn = $(params.previewBtn);
+        this.$editBtn = $(params.editBtn);
+        this.inputView = new InputView({ selector: params.inputViewSelector });
+        this.countdownView = new CountdownView({ selector: params.countdownViewSelector });
         this.$el.on('submit', function () {
             return Utils.validateForm(that.$validateFields);
         });
-        this.$validateBtn.on('click', function () {
+        this.$previewBtn.on('click', function () {
             var valid = Utils.validateForm(that.$validateFields);
             if (valid) {
                 var data = Utils.getCountdownData(that.$el.find('input'));
                 Ui.Cd = new Countdown.create(data);
+                Ui.Cd.startCounting();
+                that.toggleView(that.inputView.$el, that.countdownView.$el);
             }
+        });
+        this.$editBtn.on('click', function () {
+            Ui.Cd.stopCounting();
+            that.toggleView(that.countdownView.$el, that.inputView.$el);
         });
     };
 
-    Ui.form = new UiForm({selector: 'form', requiredFields: '[data-validate]', validateBtn: 'button.show-preview'});
+    UiForm.prototype.toggleView = function (from, to) {
+        from.fadeOut(function() {
+            to.fadeIn();
+        });
+    };
+
+    Ui.updateView = function (data) {
+        $.each(data, function (key, val) {
+            if (key === 'title') { return; }
+            var label = Utils.getLabel(key, val);
+            Ui.form.countdownView.$fields[key][0].text(val);
+            Ui.form.countdownView.$fields[key][1].text(label);
+        });
+        Ui.form.countdownView.$fields.title.text(data.title);
+    };
+
+    Ui.form = new UiForm({
+        selector: 'form',
+        requiredFields: '[data-validate]',
+        previewBtn: 'button.show-preview',
+        editBtn: 'button.show-edit',
+        inputViewSelector: '.input-container',
+        countdownViewSelector: '.countdown-container'
+    });
     Ui.fields = [];
     Ui.fields.push(
         new Spinner({ selector: '#yearWrapper', type: 'year', value: new Date().getFullYear()}),
@@ -83,10 +136,6 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
         new Spinner({ selector: '#hourWrapper', type: 'hour', value: 0 }),
         new Spinner({ selector: '#minuteWrapper', type: 'minute', value: 0 })
     );
-
-    Ui.updateView = function (data) {
-        console.log(data);
-    };
 
     return Ui;
 

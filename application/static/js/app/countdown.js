@@ -26,8 +26,7 @@ var Countdown = (function ($, window, Utils, Ui, Countdown, undef) {
             diffHours = (diffTime/1000/60/60 | 0) - (diffDays*24 | 0),
             diffMinutes = (diffTime/1000/60 | 0) - (diffDays*24*60 | 0) - (diffHours*60 | 0),
             diffSeconds = (diffTime/1000 | 0) - (diffDays*24*60*60 | 0) - (diffHours*60*60 | 0) - (diffMinutes*60 | 0);
-        console.log(diffTime);
-        return {days: diffDays, hours: diffHours, minutes: diffMinutes, seconds: diffSeconds};
+        return {title: this.title, days: diffDays, hours: diffHours, minutes: diffMinutes, seconds: diffSeconds};
     };
 
     CdModel.prototype.count = function (){

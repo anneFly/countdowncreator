@@ -5,3 +5,4 @@ application/secret_keys.py
 lib/index.yaml
 application/static/js/node_modules/
 application/static/js/package.json
+application/static/js/npm-debug.log

@@ -18,6 +18,25 @@ var Utils = (function ($, window, Utils, undef) {
         'minute': 0
     };
 
+    Utils.labels = {
+        'days': {
+            sg: 'day',
+            pl: 'days'
+        },
+        'hours': {
+            sg: 'hour',
+            pl: 'hours'
+        },
+        'minutes': {
+            sg: 'minute',
+            pl: 'minutes'
+        },
+        'seconds': {
+            sg: 'second',
+            pl: 'seconds'
+        }
+    };
+
     Utils.checkInput = function (type, val ) {
         return val !== '' && val >= Utils.minValues[type] && val <= Utils.maxValues[type];
     };
@@ -60,6 +79,10 @@ var Utils = (function ($, window, Utils, undef) {
             data[key] = val;
         });
         return data;
+    };
+
+    Utils.getLabel = function (type, value) {
+        return (value === 1 ? Utils.labels[type].sg : Utils.labels[type].pl);
     };
 
     return Utils;
