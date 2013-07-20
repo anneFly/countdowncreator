@@ -85,7 +85,6 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
         this.$previewBtn = $(params.previewBtn);
         this.$editBtn = $(params.editBtn);
         this.inputView = new InputView({ selector: params.inputViewSelector });
-        this.countdownView = new CountdownView({ selector: params.countdownViewSelector });
         this.$el.on('submit', function () {
             return Utils.validateForm(that.$validateFields);
         });
@@ -95,12 +94,12 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
                 var data = Utils.getCountdownData(that.$el.find('input'));
                 Ui.Cd = new Countdown.create(data);
                 Ui.Cd.startCounting();
-                that.toggleView(that.inputView.$el, that.countdownView.$el);
+                that.toggleView(that.inputView.$el, Ui.countdownView.$el);
             }
         });
         this.$editBtn.on('click', function () {
             Ui.Cd.stopCounting();
-            that.toggleView(that.countdownView.$el, that.inputView.$el);
+            that.toggleView(Ui.countdownView.$el, that.inputView.$el);
         });
     };
 
@@ -114,19 +113,19 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
         $.each(data, function (key, val) {
             if (key === 'title') { return; }
             var label = Utils.getLabel(key, val);
-            Ui.form.countdownView.$fields[key][0].text(val);
-            Ui.form.countdownView.$fields[key][1].text(label);
+            Ui.countdownView.$fields[key][0].text(val);
+            Ui.countdownView.$fields[key][1].text(label);
         });
-        Ui.form.countdownView.$fields.title.text(data.title);
+        Ui.countdownView.$fields.title.text(data.title);
     };
 
+    Ui.countdownView = new CountdownView({ selector: '.countdown-container' });
     Ui.form = new UiForm({
         selector: 'form',
         requiredFields: '[data-validate]',
         previewBtn: 'button.show-preview',
         editBtn: 'button.show-edit',
-        inputViewSelector: '.input-container',
-        countdownViewSelector: '.countdown-container'
+        inputViewSelector: '.input-container'
     });
     Ui.fields = [];
     Ui.fields.push(
@@ -136,6 +135,11 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
         new Spinner({ selector: '#hourWrapper', type: 'hour', value: 0 }),
         new Spinner({ selector: '#minuteWrapper', type: 'minute', value: 0 })
     );
+
+    if (window.fetchedCountdown !== undef) {
+        Ui.Cd = Countdown.createFromDate(window.fetchedCountdown);
+        Ui.Cd.startCounting();
+    }
 
     return Ui;
 

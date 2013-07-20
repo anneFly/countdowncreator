@@ -1,7 +1,31 @@
 {% extends "index.html" %}
 
 {% block content %}
-{{ countdown.title }}
-<br>
-{{ countdown.date }}
+
+<script>
+    window.fetchedCountdown = {
+        title: '{{ countdown.title }}',
+        date: '{{ countdown.date }}'
+    };
+</script>
+
+<div class="countdown-container">
+    <div class="info-unit" data-insert="title"></div>
+    <div class="cd-unit large" data-insert="days">
+        <div class="cd-number"></div>
+        <div class="cd-label"></div>
+    </div>
+    <div class="cd-unit" data-insert="hours">
+        <div class="cd-number"></div>
+        <div class="cd-label"></div>
+    </div>
+    <div class="cd-unit" data-insert="minutes">
+        <div class="cd-number"></div>
+        <div class="cd-label"></div>
+    </div>
+    <div class="cd-unit" data-insert="seconds">
+        <div class="cd-number"></div>
+        <div class="cd-label"></div>
+    </div>
+</div>
 {% endblock %}

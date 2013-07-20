@@ -9,21 +9,37 @@
       line-height: 36px;
     }
   }
-  
+
   .nav-primary {
     ul {
       width: 100%;
-      
+
       li {
         display: inline-block;
         margin: 0 0 0 15%;
-        
+
         a { line-height: 36px; }
       }
     }
   }
-  
+
   .footer {
     position: static;
   }
+
+  .countdown-container {
+    .cd-unit {
+      min-width: 100px;
+
+      &.large {
+        min-width: 100px;
+        max-width: 140px;
+      }
+    }
+
+    .cd-number {
+      font-size: 50px;
+    }
+  }
+
 }

@@ -88,7 +88,7 @@ a {
     line-height: 60px;
     width: 45%;
     margin: auto;
-    font-family: "Aclonica", serif;
+    font-family: "Electrolize", sans-serif;
     text-shadow: 2px 2px 4px black; }
     .header h1 a {
       color: inherit; }
@@ -204,11 +204,42 @@ a {
         line-height: 36px; }
 
   .footer {
-    position: static; } }
+    position: static; }
+
+  .countdown-container .cd-unit {
+    min-width: 100px; }
+    .countdown-container .cd-unit.large {
+      min-width: 100px;
+      max-width: 140px; }
+  .countdown-container .cd-number {
+    font-size: 50px; } }
 @media screen and (max-width: 480px) {
   .main-content {
     width: 96%;
-    margin-bottom: 20px; } }
+    margin-bottom: 20px; }
+
+  .countdown-container .cd-unit {
+    min-width: 0;
+    width: 100%;
+    display: block;
+    padding: 0; }
+    .countdown-container .cd-unit.large {
+      width: 100%;
+      min-width: 0;
+      max-width: none;
+      padding: 0; }
+  .countdown-container .cd-number {
+    display: inline-block;
+    vertical-align: middle;
+    width: 46%;
+    font-size: 50px;
+    text-align: right;
+    margin: 0 6% 0 0; }
+  .countdown-container .cd-label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 46%;
+    text-align: left; } }
 @media screen and (max-width: 319px) {
   .header {
     height: 72px;

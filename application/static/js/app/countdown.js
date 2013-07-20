@@ -53,6 +53,23 @@ var Countdown = (function ($, window, Utils, Ui, Countdown, undef) {
         return new CdModel(data);
     };
 
+    Countdown.createFromDate = function (obj) {
+        var parts = obj.date.split(' '),
+            date = parts[0],
+            dateParts = date.split('-'),
+            time = parts[1],
+            timeParts = time.split(':'),
+            data = {
+                title: obj.title,
+                year: dateParts[0],
+                month: dateParts[1],
+                day: dateParts[2],
+                hour: timeParts[0],
+                minute: timeParts[1]
+            };
+        return new CdModel(data);
+    };
+
     return Countdown;
 
 }(jQuery, this, this.Utils, this.Ui || {}, Countdown || {}));

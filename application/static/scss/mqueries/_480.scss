@@ -3,4 +3,36 @@
     width: 96%;
     margin-bottom: 20px;
   }
+
+  .countdown-container {
+    .cd-unit {
+      min-width: 0;
+      width: 100%;
+      display: block;
+      padding: 0;
+
+      &.large {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        padding: 0;
+      }
+    }
+
+    .cd-number {
+      display: inline-block;
+      vertical-align: middle;
+      width: 46%;
+      font-size: 50px;
+      text-align: right;
+      margin: 0 6% 0 0;
+    }
+
+    .cd-label {
+      display: inline-block;
+      vertical-align: middle;
+      width: 46%;
+      text-align: left;
+    }
+  }
 }
