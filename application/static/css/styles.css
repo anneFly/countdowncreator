@@ -154,31 +154,132 @@ a {
         .nav-primary ul li a:hover, .nav-primary ul li a:active {
           color: #99cc99; }
 
-.countdown-container {
+.nav-secondary {
+  display: block; }
+  .nav-secondary:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  .nav-secondary .left {
+    float: left; }
+  .nav-secondary .right {
+    float: right; }
+  .nav-secondary .edit-btn, .nav-secondary .submit-btn {
+    display: none; }
+  .preview-mode .nav-secondary .edit-btn, .preview-mode .nav-secondary .submit-btn {
+    display: block; }
+  .preview-mode .nav-secondary .preview-btn {
+    display: none; }
+
+.input-container input {
+  display: block;
+  width: 94%;
+  background: white;
+  border: 1px solid #339966;
+  height: 26px;
+  padding: 2%;
+  outline: none;
+  margin: 1%; }
+.input-container fieldset {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 30%;
+  margin: 10px 1%; }
+  .input-container fieldset input {
+    width: 84%;
+    padding: 8%;
+    margin: -2px 0;
+    text-align: right;
+    border-top: none;
+    border-bottom: none; }
+  .input-container fieldset .placeholder {
+    color: #cccccc;
+    margin-left: 8%;
+    margin-top: -25px;
+    position: absolute;
+    font-size: 13px; }
+  .input-container fieldset.spinner button {
+    width: 100%;
+    padding: 0;
+    border: 1px solid #339966;
+    background: #339966;
+    color: white;
+    font-size: 16px;
+    line-height: 36px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0; }
+    .input-container fieldset.spinner button:active {
+      background: #006633;
+      border-color: #006633; }
+  .input-container fieldset .preview-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%; }
+
+button {
+  box-sizing: content-box;
+  padding: 2px 10px;
+  line-height: 32px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f5f5f5), color-stop(100%, #eeeeee));
+  background: -webkit-linear-gradient(#f5f5f5, #eeeeee);
+  background: -moz-linear-gradient(#f5f5f5, #eeeeee);
+  background: -o-linear-gradient(#f5f5f5, #eeeeee);
+  background: linear-gradient(#f5f5f5, #eeeeee);
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px; }
+  button:active {
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #f5f5f5));
+    background: -webkit-linear-gradient(#eeeeee, #f5f5f5);
+    background: -moz-linear-gradient(#eeeeee, #f5f5f5);
+    background: -o-linear-gradient(#eeeeee, #f5f5f5);
+    background: linear-gradient(#eeeeee, #f5f5f5); }
+  button i + span {
+    margin-left: 10px; }
+
+.countdown {
   display: block;
   width: 100%;
   text-align: center;
   color: #003333;
   font-family: "Electrolize", sans-serif; }
-  .countdown-container .info-unit {
-    width: 100%; }
-  .countdown-container .cd-unit {
+  .countdown .info-unit {
+    width: 100%;
+    color: inherit;
+    max-width: 600px;
+    margin: 10px 170px 20px auto;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: inherit; }
+  .countdown .cd-unit {
     display: inline-block;
     width: auto;
     padding: 0 0.5%;
     min-width: 13%; }
-    .countdown-container .cd-unit.large {
+    .countdown .cd-unit.large {
       padding: 0 0.5% 0 0;
       width: auto;
       min-width: 110px;
       max-width: 208px; }
-  .countdown-container .cd-number {
+  .countdown .cd-number {
     display: block;
     font-size: 76px;
     color: inherit;
     font-family: inherit;
     text-align: center; }
-  .countdown-container .cd-label {
+  .countdown .cd-label {
     display: block;
     color: inherit;
     font-family: inherit;
@@ -206,36 +307,38 @@ a {
   .footer {
     position: static; }
 
-  .countdown-container .cd-unit {
+  .countdown .cd-unit {
     min-width: 100px; }
-    .countdown-container .cd-unit.large {
+    .countdown .cd-unit.large {
       min-width: 100px;
       max-width: 140px; }
-  .countdown-container .cd-number {
+  .countdown .info-unit {
+    margin: 10px auto 20px auto; }
+  .countdown .cd-number {
     font-size: 50px; } }
 @media screen and (max-width: 480px) {
   .main-content {
     width: 96%;
     margin-bottom: 20px; }
 
-  .countdown-container .cd-unit {
+  .countdown .cd-unit {
     min-width: 0;
     width: 100%;
     display: block;
     padding: 0; }
-    .countdown-container .cd-unit.large {
+    .countdown .cd-unit.large {
       width: 100%;
       min-width: 0;
       max-width: none;
       padding: 0; }
-  .countdown-container .cd-number {
+  .countdown .cd-number {
     display: inline-block;
     vertical-align: middle;
     width: 46%;
     font-size: 50px;
     text-align: right;
     margin: 0 6% 0 0; }
-  .countdown-container .cd-label {
+  .countdown .cd-label {
     display: inline-block;
     vertical-align: middle;
     width: 46%;

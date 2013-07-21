@@ -6,59 +6,70 @@
 {% endif %}
 
 <form method="post" action="/create">
+    <div class="nav-secondary">
+        <button type="button" class="show-edit edit-btn left"><i class="icon-arrow-left"></i><span>back</span></button>
+        <!--<button type="button" class="show-preview preview-btn right" >preview</button>-->
+        <button type="submit" class="submit-btn right"><i class="icon-save"></i><span>save</span></button>
+    </div>
 
     <div class="input-container">
     	<input type="text" name="title" value="{{ input.title }}" placeholder="Title">
 
-    	<fieldset id="yearWrapper">
+    	<fieldset class="spinner" id="yearWrapper">
             <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
-            <input type="text" name="year" value="{{ input.year }}" maxlength="4" pattern"\d*" placeholder="YYYY" data-validate="year" />
+            <input type="text" name="year" value="{{ input.year }}" maxlength="4" pattern"\d*" data-validate="year" />
+            <span class="placeholder">YYYY</span>
             <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
         </fieldset>
-        <fieldset id="monthWrapper">
+        <fieldset class="spinner" id="monthWrapper">
             <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
-            <input type="text" name="month" value="{{ input.month }}" maxlength="2" pattern"\d*" placeholder="MM" data-validate="month" />
+            <input type="text" name="month" value="{{ input.month }}" maxlength="2" pattern"\d*" data-validate="month" />
+            <span class="placeholder">MM</span>
             <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
         </fieldset>
-        <fieldset id="dayWrapper">
+        <fieldset class="spinner" id="dayWrapper">
             <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
-            <input type="text" name="day" value="{{ input.day }}" maxlength="2" pattern"\d*" placeholder="DD" data-validate="day" />
-            <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
-        </fieldset>
-
-        <fieldset id="hourWrapper">
-            <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
-            <input type="text" name="hour" value="{{ input.hour }}" maxlength="2" pattern"\d*" placeholder="HH" data-validate="hour" />
-            <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
-        </fieldset>
-        <fieldset id="minuteWrapper">
-            <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
-            <input type="text" name="minute" value="{{ input.minute }}" maxlength="2" pattern"\d*" placeholder="MM" data-validate="minute" />
+            <input type="text" name="day" value="{{ input.day }}" maxlength="2" pattern"\d*" data-validate="day" />
+            <span class="placeholder">DD</span>
             <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
         </fieldset>
 
-    	<button type="button" class="show-preview" >preview</button>
+        <fieldset class="spinner" id="hourWrapper">
+            <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
+            <input type="text" name="hour" value="{{ input.hour }}" maxlength="2" pattern"\d*" data-validate="hour" />
+            <span class="placeholder">HH</span>
+            <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
+        </fieldset>
+        <fieldset class="spinner" id="minuteWrapper">
+            <button class="inc" type="button" data-role="add" data-undorole="sub">+</button>
+            <input type="text" name="minute" value="{{ input.minute }}" maxlength="2" pattern"\d*" data-validate="minute" />
+            <span class="placeholder">MM</span>
+            <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
+        </fieldset>
+        <fieldset>
+            <button type="button" class="show-preview preview-btn" ><i class="icon-arrow-right"></i></button>
+        </fieldset>
 	</div>
 	<div class="countdown-container" style="display: none;">
-        <div class="info-unit" data-insert="title"></div>
-        <div class="cd-unit large" data-insert="days">
-            <div class="cd-number"></div>
-            <div class="cd-label"></div>
+	    <div class="countdown">
+            <div class="info-unit" data-insert="title"></div>
+            <div class="cd-unit large" data-insert="days">
+                <div class="cd-number"></div>
+                <div class="cd-label"></div>
+            </div>
+            <div class="cd-unit" data-insert="hours">
+                <div class="cd-number"></div>
+                <div class="cd-label"></div>
+            </div>
+            <div class="cd-unit" data-insert="minutes">
+                <div class="cd-number"></div>
+                <div class="cd-label"></div>
+            </div>
+            <div class="cd-unit" data-insert="seconds">
+                <div class="cd-number"></div>
+                <div class="cd-label"></div>
+            </div>
         </div>
-        <div class="cd-unit" data-insert="hours">
-            <div class="cd-number"></div>
-            <div class="cd-label"></div>
-        </div>
-        <div class="cd-unit" data-insert="minutes">
-            <div class="cd-number"></div>
-            <div class="cd-label"></div>
-        </div>
-        <div class="cd-unit" data-insert="seconds">
-            <div class="cd-number"></div>
-            <div class="cd-label"></div>
-        </div>
-        <button type="button" class="show-edit">back to edit</button>
-        <button type="submit">submit</button>
     </div>
 </form>
 

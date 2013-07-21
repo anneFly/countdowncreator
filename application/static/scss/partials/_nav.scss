@@ -17,7 +17,7 @@
         font-size: 14px;
         line-height: 60px;
         letter-spacing: 1px;
-        
+
         &:hover, &:active {
             color: $colorLightGreen;
         }
@@ -25,3 +25,36 @@
     }
   }
 }
+
+.nav-secondary {
+  display: block;
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+
+  .edit-btn, .submit-btn {
+    display: none;
+  }
+
+  .preview-mode & {
+    .edit-btn, .submit-btn {
+      display: block;
+    }
+    .preview-btn {
+      display: none;
+    }
+  }
+}
+

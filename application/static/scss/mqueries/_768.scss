@@ -27,7 +27,7 @@
     position: static;
   }
 
-  .countdown-container {
+  .countdown {
     .cd-unit {
       min-width: 100px;
 
@@ -35,6 +35,10 @@
         min-width: 100px;
         max-width: 140px;
       }
+    }
+
+    .info-unit {
+      margin: 10px auto 20px auto;
     }
 
     .cd-number {

@@ -16,6 +16,7 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
         this.maxValue = Utils.maxValues[this.type];
         this.minValue = Utils.minValues[this.type];
         this.value = this.$input.val() !== '' ? parseInt(this.$input.val(), 10) : params.value;
+        this.renderValue();
     };
 
     Spinner.prototype.bindEvents = function () {
@@ -104,8 +105,10 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
     };
 
     UiForm.prototype.toggleView = function (from, to) {
+        var that = this;
         from.fadeOut(function() {
             to.fadeIn();
+            that.$el.toggleClass('preview-mode');
         });
     };
 
@@ -130,10 +133,10 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
     Ui.fields = [];
     Ui.fields.push(
         new Spinner({ selector: '#yearWrapper', type: 'year', value: new Date().getFullYear()}),
-        new Spinner({ selector: '#monthWrapper', type: 'month', value: 1 }),
-        new Spinner({ selector: '#dayWrapper', type: 'day', value: 1 }),
-        new Spinner({ selector: '#hourWrapper', type: 'hour', value: 0 }),
-        new Spinner({ selector: '#minuteWrapper', type: 'minute', value: 0 })
+        new Spinner({ selector: '#monthWrapper', type: 'month', value: new Date().getMonth() + 1 }),
+        new Spinner({ selector: '#dayWrapper', type: 'day', value: new Date().getDate() }),
+        new Spinner({ selector: '#hourWrapper', type: 'hour', value: new Date().getHours() }),
+        new Spinner({ selector: '#minuteWrapper', type: 'minute', value: new Date().getMinutes() })
     );
 
     if (window.fetchedCountdown !== undef) {
