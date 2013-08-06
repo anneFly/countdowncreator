@@ -1,4 +1,4 @@
-@media screen and (max-width: "768px") {
+@media screen and (max-width: "767px") {
   .header {
     height: 72px;
     margin: 0;
@@ -46,4 +46,67 @@
     }
   }
 
+  .input-container {
+
+    input {
+      display: block;
+      width: 94%;
+      background: $colorWhite;
+      border: 1px solid $colorMintGreen;
+      height: 26px;
+      padding: 2%;
+      outline: none;
+      margin: 1%;
+    }
+
+    fieldset {
+      position: relative;
+      display: inline-block;
+      vertical-align: bottom;
+      width: 30%;
+      margin: 10px 1%;
+
+      input {
+        float: none;
+        width: 84%;
+        padding: 8%;
+        margin: -2px 0;
+        text-align: right;
+        border-top: none;
+        border-bottom: none;
+        font-size: 16px;
+      }
+
+      .placeholder {
+        color: $colorDarkGrey;
+        margin-top: -6px;
+        position: absolute;
+        font-size: 12px;
+      }
+
+      &.spinner {
+        button {
+          width: 100%;
+          padding: 0;
+          float: none;
+          border: 1px solid $colorMintGreen;
+          background: $colorMintGreen;
+          color: $colorWhite;
+          font-size: 16px;
+          line-height: 36px;
+          @include border-radius(0);
+          &:active {
+            background: $colorDarkGreen;
+            border-color: $colorDarkGreen;
+          }
+        }
+      }
+      .preview-btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+      }
+    }
+  }
 }
