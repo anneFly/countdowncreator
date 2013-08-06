@@ -16,7 +16,7 @@
     position: relative;
     display: inline-block;
     vertical-align: bottom;
-    width: 31%;
+    width: 31.3%;
     margin: 10px 1%;
 
     input {
@@ -79,4 +79,5 @@ button {
   i + span {
     margin-left: 10px;
   }
+  color: $colorBlack;
 }

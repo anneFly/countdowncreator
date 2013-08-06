@@ -60,11 +60,6 @@
     }
 
     fieldset {
-      position: relative;
-      display: inline-block;
-      vertical-align: bottom;
-      width: 30%;
-      margin: 10px 1%;
 
       input {
         float: none;
@@ -99,6 +94,9 @@
             background: $colorDarkGreen;
             border-color: $colorDarkGreen;
           }
+          &:first-child {
+          border-bottom: 1px solid $colorMintGreen;
+        }
         }
       }
       .preview-btn {
@@ -106,6 +104,28 @@
         bottom: 0;
         right: 0;
         width: 50%;
+      }
+    }
+  }
+
+  .create-success {
+    h2 {
+      font-size: 24px;
+      margin-bottom:30px;
+    }
+    .button {
+      font-size: 18px;
+      padding: 10px;
+    }
+    .copy-url {
+      margin-top: 30px;
+      font-size: 14px;
+
+      input {
+        display: block;
+        width: 96%;
+        height: 16px;
+        font-size: 14px;
       }
     }
   }

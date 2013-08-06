@@ -46,3 +46,34 @@
     font-size: 24px;
   }
 }
+
+.create-success {
+  h2 {
+    display: block;
+    font-size: 30px;
+    margin-bottom:50px;
+  }
+  .button {
+    @extend button;
+    display: inline-block;
+    font-size: 24px;
+    line-height: auto;
+    padding: 16px;
+  }
+  .copy-url {
+    display: block;
+    margin-top: 50px;
+    font-size: 16px;
+
+    input {
+      width: 60%;
+      background: $colorWhite;
+      border: 1px solid $colorMintGreen;
+      height: 20px;
+      padding: 1%;
+      outline: none;
+      margin: 1%;
+      font-size: 16px;
+    }
+  }
+}

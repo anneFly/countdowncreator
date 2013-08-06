@@ -1,8 +1,12 @@
 {% extends "index.html" %}
 
 {% block content %}
+<div class="create-success">
 <h2>Your countdown has been saved!</h2>
-
-<p>View it here: <a href="{{ url_for('details', id=countdown.key.id()) }}" >{{ url_for('details', id=countdown.key.id()) }}</a></p>
-
+<a class="button" href="{{ url_for('details', id=countdown.key.id()) }}">View Countdown!</a>
+<span class="copy-url">
+    or share the url
+    <input type="text" readonly value="localhost:8080{{ url_for('details', id=countdown.key.id()) }}" />
+</span>
+</div>
 {% endblock %}
