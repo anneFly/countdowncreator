@@ -257,6 +257,13 @@ button, .create-success .button {
   button i + span, .create-success .button i + span {
     margin-left: 10px; }
 
+.error-message {
+  color: #f00;
+  display: none; }
+
+.error .error-message {
+  display: block; }
+
 .countdown {
   display: block;
   width: 100%;

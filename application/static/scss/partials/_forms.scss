@@ -81,3 +81,12 @@ button {
   }
   color: $colorBlack;
 }
+
+.error-message {
+  color: #f00;
+  display: none;
+}
+
+.error {
+  .error-message { display: block; }
+}

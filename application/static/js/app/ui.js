@@ -92,10 +92,13 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
         this.$previewBtn.on('click', function () {
             var valid = Utils.validateForm(that.$validateFields);
             if (valid) {
+                that.$el.removeClass('error');
                 var data = Utils.getCountdownData(that.$el.find('input'));
                 Ui.Cd = new Countdown.create(data);
                 Ui.Cd.startCounting();
                 that.toggleView(that.inputView.$el, Ui.countdownView.$el);
+            } else {
+                that.$el.addClass('error');
             }
         });
         this.$editBtn.on('click', function () {
@@ -107,9 +110,8 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
     UiForm.prototype.toggleView = function (from, to) {
         var that = this;
         from.fadeOut(function() {
-            to.fadeIn(1000, function () {
-                that.$el.toggleClass('preview-mode');
-            });
+            to.fadeIn();
+            that.$el.toggleClass('preview-mode');
         });
     };
 
