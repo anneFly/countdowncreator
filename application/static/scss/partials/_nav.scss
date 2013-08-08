@@ -28,6 +28,8 @@
 
 .nav-secondary {
   display: block;
+  max-width: 300px;
+  margin: 30px auto;
   &:after {
     content: ".";
     display: block;

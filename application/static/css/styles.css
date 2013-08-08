@@ -156,7 +156,9 @@ a {
           color: #99cc99; }
 
 .nav-secondary {
-  display: block; }
+  display: block;
+  max-width: 300px;
+  margin: 30px auto; }
   .nav-secondary:after {
     content: ".";
     display: block;
@@ -435,7 +437,10 @@ button, .create-success .button {
     display: inline-block;
     vertical-align: middle;
     width: 46%;
-    text-align: left; } }
+    text-align: left; }
+
+  .nav-secondary {
+    margin: 14px auto; } }
 @media screen and (max-width: 319px) {
   .header {
     height: 72px;

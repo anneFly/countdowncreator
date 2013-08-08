@@ -273,8 +273,9 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
     UiForm.prototype.toggleView = function (from, to) {
         var that = this;
         from.fadeOut(function() {
-            to.fadeIn();
-            that.$el.toggleClass('preview-mode');
+            to.fadeIn(1000, function () {
+                that.$el.toggleClass('preview-mode');
+            });
         });
     };
 

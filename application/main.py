@@ -6,11 +6,11 @@ from application import app
 
 
 
+#@app.route('/')
+#def route_to_index():
+#    return flask.render_template('index.html')
+
 @app.route('/')
-def route_to_index():
-    return flask.render_template('index.html')
-
-
 @app.route('/create')
 def route_to_create():
     return flask.render_template('create.html', input={})

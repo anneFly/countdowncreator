@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 {% if error %}
@@ -6,12 +6,6 @@
 {% endif %}
 
 <form method="post" action="/create">
-    <div class="nav-secondary">
-        <button type="button" class="show-edit edit-btn left"><i class="icon-arrow-left"></i><span>back</span></button>
-        <!--<button type="button" class="show-preview preview-btn right" >preview</button>-->
-        <button type="submit" class="submit-btn right"><i class="icon-save"></i><span>save</span></button>
-    </div>
-
     <div class="input-container">
     	<input type="text" name="title" value="{{ input.title }}" placeholder="Title">
 
@@ -43,7 +37,7 @@
             <span class="placeholder">MM</span>
             <button class="dec" type="button" data-role="sub" data-undorole="add">-</button>
         </fieldset><fieldset>
-            <button type="button" class="show-preview preview-btn" ><i class="icon-arrow-right"></i></button>
+            <button type="button" class="show-preview preview-btn" >next <i class="icon-arrow-right"></i></button>
         </fieldset>
 
 	</div>
@@ -67,6 +61,11 @@
                 <div class="cd-label"></div>
             </div>
         </div>
+    </div>
+    <div class="nav-secondary">
+        <button type="button" class="show-edit edit-btn left"><i class="icon-arrow-left"></i><span>back</span></button>
+        <!--<button type="button" class="show-preview preview-btn right" >preview</button>-->
+        <button type="submit" class="submit-btn right"><i class="icon-save"></i><span>save</span></button>
     </div>
 </form>
 
