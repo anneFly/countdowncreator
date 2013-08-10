@@ -260,7 +260,7 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
             if (valid) {
                 that.$el.removeClass('error');
                 var data = Utils.getCountdownData(that.$el.find('input'));
-                Ui.Cd = new Countdown.create(data);
+                Ui.Cd = Countdown.create(data);
                 Ui.Cd.startCounting();
                 that.toggleView(that.inputView.$el, Ui.countdownView.$el);
             } else {
@@ -279,6 +279,20 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
             to.fadeIn();
             that.$el.toggleClass('preview-mode');
         });
+    };
+
+    var SuccessView = function (params) {
+        this.$urlField = $(params.urlField);
+        this.init();
+    };
+
+    SuccessView.prototype.init = function () {
+        var protocol = window.location.protocol,
+            hostname = window.location.hostname,
+            origin = window.location.origin || [protocol, '//', hostname].join(''),
+            relUrl = this.$urlField.val(),
+            absUrl = [origin, relUrl].join('');
+        this.$urlField.val(absUrl);
     };
 
     Ui.updateView = function (data) {
@@ -307,6 +321,8 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
         new Spinner({ selector: '#hourWrapper', type: 'hour', value: new Date().getHours() }),
         new Spinner({ selector: '#minuteWrapper', type: 'minute', value: new Date().getMinutes() })
     );
+
+    Ui.successView = new SuccessView({ urlField: '.copy-url input' });
 
     if (window.fetchedCountdown !== undef) {
         Ui.Cd = Countdown.createFromDate(window.fetchedCountdown);

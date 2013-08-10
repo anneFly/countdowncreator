@@ -81,6 +81,7 @@ a {
   background: linear-gradient(#339966, #006633);
   margin: 0 0 20px 0; }
   .header h1 {
+    text-align: left;
     display: inline-block;
     float: left;
     color: white;
@@ -409,15 +410,7 @@ button, .create-success .button {
     margin-bottom: 30px; }
   .create-success .button {
     font-size: 18px;
-    padding: 10px; }
-  .create-success .copy-url {
-    margin-top: 30px;
-    font-size: 14px; }
-    .create-success .copy-url input {
-      display: block;
-      width: 96%;
-      height: 16px;
-      font-size: 14px; } }
+    padding: 10px; } }
 @media screen and (max-width: 480px) {
   .main-content {
     width: 96%;
@@ -447,7 +440,16 @@ button, .create-success .button {
     text-align: left; }
 
   .nav-secondary {
-    margin: 14px auto; } }
+    margin: 14px auto; }
+
+  .create-success .copy-url {
+    margin-top: 30px;
+    font-size: 14px; }
+    .create-success .copy-url input {
+      display: block;
+      width: 96%;
+      height: 16px;
+      font-size: 14px; } }
 @media screen and (max-width: 319px) {
   .header {
     height: 72px;

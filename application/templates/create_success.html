@@ -6,7 +6,7 @@
 <a class="button" href="{{ url_for('details', id=countdown.key.id()) }}">View Countdown!</a>
 <span class="copy-url">
     or share the url
-    <input type="text" readonly value="localhost:8080{{ url_for('details', id=countdown.key.id()) }}" />
+    <input type="text" readonly value="{{ url_for('details', id=countdown.key.id()) }}" />
 </span>
 </div>
 {% endblock %}

@@ -60,7 +60,7 @@ module.exports = function(grunt) {
                 "trailing": true,
                 "maxparams": 10,
                 "maxdepth": 3,
-                "maxstatements": 20,
+                "maxstatements": 25,
                 "browser": true,
                 "maxlen": 120,
                 "maxcomplexity": 13,
