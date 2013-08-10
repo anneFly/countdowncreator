@@ -171,12 +171,6 @@ a {
     float: left; }
   .nav-secondary .right {
     float: right; }
-  .nav-secondary .edit-btn, .nav-secondary .submit-btn {
-    display: none; }
-  .preview-mode .nav-secondary .edit-btn, .preview-mode .nav-secondary .submit-btn {
-    display: block; }
-  .preview-mode .nav-secondary .preview-btn {
-    display: none; }
 
 .input-container input {
   display: block;

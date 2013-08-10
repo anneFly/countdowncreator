@@ -111,7 +111,6 @@ var Ui = (function ($, window, Utils, Countdown, Ui, undef) {
         var that = this;
         from.fadeOut(function() {
             to.fadeIn();
-            that.$el.toggleClass('preview-mode');
         });
     };
 

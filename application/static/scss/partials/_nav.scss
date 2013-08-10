@@ -45,18 +45,5 @@
   .right {
     float: right;
   }
-
-  .edit-btn, .submit-btn {
-    display: none;
-  }
-
-  .preview-mode & {
-    .edit-btn, .submit-btn {
-      display: block;
-    }
-    .preview-btn {
-      display: none;
-    }
-  }
 }
 
